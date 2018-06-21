@@ -1,3 +1,4 @@
+<% include ./partials/header %>
 <h1>game results page</h1>
 
 <% entries.forEach(function(results){ %>
@@ -5,3 +6,5 @@
         <%= results.username %> - <%=results.gameName %>
     </li>
 <% }); %>
+
+<% include ./partials/footer %>

@@ -1,17 +1,22 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose");
+    mongoose    = require("mongoose"),
+    seedDB      = require("./seeds");
     
 // auth variables
 var passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
-    User            = require("./models/user");
+    User            = require("./models/user"),
+    Post            = require("./models/post");
 
 
 mongoose.connect("mongodb://localhost/gamer_exchange");
 app.use(bodyParser.urlencoded({extended: true})); // needed to run body-parser properly. for some reason.
 app.set("view engine", "ejs");
+
+// seed the DATABAS
+seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -62,7 +67,7 @@ app.get("/", function(req, res){
 
 app.get("/gameResults", isLoggedIn, function(req, res) {
     // get all entries from DB
-    Entry.find({}, function(err, entries){
+    Post.find({}, function(err, entries){
         if(err){
             console.log(err);
         } else {

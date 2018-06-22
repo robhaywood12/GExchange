@@ -2,18 +2,26 @@
 <h1>Describe your gaming partner</h1>
 
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+<div class="form-group container">
+  <div class="row">
+    <div style="width: 30%; margin: 25px auto;">
+      <p><label for="sel1">Speaks:</label>
+        <select name="speaking">
+          <option>French</option>
+          <option>English</option>
+        </select>
+      </p>
+      <p><label for="sel1">Learning:</label>
+        <select name="learning">
+          <option>English</option>
+          <option>French</option>
+        </select>
+      </p>
+      <p>
+        <a href="/gameresults"><button type="button" class="btn btn-primary">Search</button></a>
+      </p>
+    </div>
+  </div>
 </div>
 <!--
 <select>

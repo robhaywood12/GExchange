@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var passportLocalMongooseEmail = require("passport-local-mongoose-email");
 
 // now we need our userschema. username and password. mongoDB stuff.
-var User = new mongoose.Schema({
+var tempUser = new mongoose.Schema({
     username: String,
     password: String,
     country: String,
@@ -15,7 +15,7 @@ var User = new mongoose.Schema({
 });
 
 // this adds methods to our user!
-User.plugin(passportLocalMongooseEmail);
+tempUser.plugin(passportLocalMongooseEmail);
 
 // export our schema model
-module.exports = mongoose.model("User", User);
+module.exports = mongoose.model("User", tempUser);

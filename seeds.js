@@ -3,10 +3,12 @@ var Post = require("./models/post");
 
 var data = [
     {
-        author: "Jacques",
+        username: "baguette99",
         game: "Rocket League",
-        speaking: "French",
-        learning: "English"
+        nativeLang: "French",
+        practLang: "English",
+        desc: "bonjour, je m'appelle baguette et je suis une baguette mdr",
+        password: "password"
     },
     {
         author: "Pierre",

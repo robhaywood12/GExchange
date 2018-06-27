@@ -5,21 +5,26 @@
 <div class="form-group container">
   <div class="row">
     <div style="width: 30%; margin: 25px auto;">
-      <p><label for="sel1">Speaks:</label>
-        <select name="speaking">
-          <option>French</option>
-          <option>English</option>
-        </select>
-      </p>
-      <p><label for="sel1">Learning:</label>
-        <select name="learning">
-          <option>English</option>
-          <option>French</option>
-        </select>
-      </p>
-      <p>
-        <a href="/gameresults"><button type="button" class="btn btn-primary">Search</button></a>
-      </p>
+      
+      <form action="/gameresults" method="GET">
+        <p><label for="sel1">Speaks:</label>
+          <select id="speakValue" name="speaking">
+            <option>French</option>
+            <option>English</option>
+          </select>
+        </p>
+        <p><label for="sel1">Learning:</label>
+          <select id="learnValue" name="learning">
+            <option>English</option>
+            <option>French</option>
+          </select>
+        </p>
+        <p>
+          <input type="submit">
+        </p>
+      </form>
+      
+        <!-- <a href="/gameresults"><button type="button" class="btn btn-primary">Search</button></a> --
     </div>
   </div>
 </div>
@@ -29,5 +34,7 @@
     <option value ="english">english</option>
 </select>
 -->
+
+
 
 <% include ./partials/footer %>

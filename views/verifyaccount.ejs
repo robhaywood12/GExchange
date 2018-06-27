@@ -1,0 +1,6 @@
+<h1>confirm account. your user token is <%user%></h1>
+
+<form action="/activation/<%=user.authToken%>" method="POST">
+    <button type="submit">Verify Account</button>
+    <%=console.log(user);%>
+</form>

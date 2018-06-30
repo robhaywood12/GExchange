@@ -9,8 +9,12 @@
             <p>Practicing Language: <%= user.practLang %></p>
             <p>Summary: <%= user.desc %></p>
             <p>Email: <%= user.email %></p>
+            <!-- if the current user ID is the same as the mongoDB user ID
+            currentuser is derived from passport while user._id is from mongodb-->
             <% if (currentUser && user._id.equals(currentUser._id)) { %>
                 <a href="/users/<%=user._id%>/edit">Edit Profile</a>
+            <% } else if (currentUser && !user._id.equals(currentUser._id)) { %>
+                <a href="/message/<%=user._id%>">Send Message</a>
             <% } %>
         </div>
     </div>

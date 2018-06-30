@@ -1,0 +1,12 @@
+<h1>inbox here</h1>
+
+
+<% foundConvos.forEach(function(convoResults){ %>
+    <h4>Message ID: <%=convoResults.convoId%></h4>
+    <% foundMessages.forEach(function(messageResults){ %>
+        <% if (messageResults.convoId == convoResults.convoId) { %>
+            <p><%=messageResults.author%>: <%=messageResults.content%></p>
+        <% } %>
+    <% }) %>
+    <br><br><br>
+<% }) %>

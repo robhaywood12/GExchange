@@ -4,7 +4,7 @@
 <h1>Game Results Page</h1>
 
 
-<% entries.forEach(function(results){ %>
+<% users.forEach(function(results){ %>
     <% if ((speaking === results.nativeLang) && (learning === results.practLang)) { %>
         <% numResults = numResults + 1; %>
     <% } %>
@@ -13,10 +13,10 @@
 <h3><%= numResults %> results found.</h3>
 
 
-<% entries.forEach(function(results){ %>
+<% users.forEach(function(results){ %>
     
 
-        <% if ((speaking === results.nativeLang) && (learning == results.practLang)) { %>
+        <!-- if ((speaking === results.nativeLang) && (learning == results.practLang)) { %> -->
             <li>
             <p><a href="/users/<%= results.id %>"><%= results.username %></a></p>
             <p>Country: <%= results.country %></p>
@@ -24,7 +24,7 @@
             <p>Learning: <%= results.practLang %></p> 
             <p>Summary: <%= results.desc %></p>
             </li>
-        <% } %>
+
     
     <% }); %>  </li>
 

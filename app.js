@@ -22,7 +22,9 @@ var express     = require("express"),
 // method override
     methodOverride  = require("method-override");
 
-mongoose.connect("mongodb://localhost/gamer_exchange");
+//mongoose.connect("mongodb://localhost/gamer_exchange");
+mongoose.connect("mongodb://joseph:rofl1337@ds135441.mlab.com:35441/gexchange");
+
 app.use(bodyParser.urlencoded({extended: true})); // needed to run body-parser properly. for some reason.
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public"));

@@ -1,6 +1,11 @@
-<h1>confirm account. your user token is <%user%></h1>
+<% include ./partials/header %>
+<h1>Account confirmation</h1>
 
 <form action="/activation/<%=user.authToken%>" method="POST">
-    <button type="submit">Verify Account</button>
+    <div class="text-center">
+    <button class="btn btn-primary mt-10" type="submit">Verify!</button>
+    </div>
     <%=console.log(user);%>
 </form>
+
+<% include ./partials/footer %>

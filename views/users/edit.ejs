@@ -5,7 +5,7 @@
 <!-- this sends a post request to /register -->
 <form action="/users/<%=user._id%>?_method=PUT" method="POST">
     <div>
-        <input type="text" name="edits[username]" value="<%= user.username %>">
+        <h4><%=user.username%></h4>
     </div>
     <div>
         <input type="text" name="edits[country]" value="<%= user.country %>">
@@ -17,13 +17,10 @@
         <input type="text" name="edits[practLang]" value="<%= user.practLang %>">
     </div>
     <div>
+        <input type="text" name="edits[gamesPlaying]" value="<%=user.gamesPlaying%>">
+    </div>
+    <div>
         <input type="text" name="edits[desc]" value="<%= user.desc %>">
-    </div>
-    <div>
-        <input type="email" name="edits[email]" placeholder="email">
-    </div>
-    <div>
-        <input type="password" name="edit[password]" placeholder="password">
     </div>
     <div>
         <button>Submit</button>

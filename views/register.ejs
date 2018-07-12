@@ -1,33 +1,46 @@
 <% include ./partials/header %>
-<h1>Registration page :)</h1>
+<h1>Registration</h1>
+
+
+<div class="marginTop card text-white text-center mx-auto" style="width: 20rem">
+    <div class="card-body">
 
 <!-- this sends a post request to /register -->
 <form action="/register" method="post">
-    <div>
-        <input type="text" name="username" placeholder="username">
+    <div class="form-group">
+        <div class="align-items-center">
+    <div class="mt-1">
+        <input class="form-control" type="text" name="username" placeholder="username (case sensitive)">
     </div>
-    <div>
-        <input type="text" name="country" placeholder="Country">
+    <div class="mt-1">
+        <input class="form-control" type="text" name="country" placeholder="Country">
     </div>
-    <div>
-        <input type="text" name="nativeLang" placeholder="Native Language">
+    <div class="mt-1">
+        <input class="form-control" type="text" name="nativeLang" placeholder="Native Language">
     </div>
-    <div>
-        <input type="text" name="practLang" placeholder="Practicing Language">
+    <div class="mt-1">
+        <input class="form-control" type="text" name="practLang" placeholder="Practicing Language">
     </div>
-    <div>
-        <input type="text" name="desc" placeholder="description">
+    <div class="mt-1">
+        <textarea class="form-control" rows="4" cols="35" name="gamesPlaying" placeholder ="Games Playing"></textarea> 
     </div>
-    <div>
-        <input type="email" name="email" placeholder="email">
+    <div class="mt-1">
+        <textarea class="form-control" rows="4" cols="35" name="desc" placeholder="Description"></textarea>
     </div>
-    <div>
-        <input type="password" name="password" placeholder="password">
+    <div class="mt-1">
+        <input class="form-control" type="email" name="email" placeholder="email">
     </div>
-    <div>
-        <button>Sign up</button>
+    <div class="mt-1">
+        <input class="form-control" type="password" name="password" placeholder="password">
+    </div>
+    <div class="mt-1">
+        <button class="btn btn-primary mt-3">Sign up</button>
+    </div>
+        </div>
     </div>
     
 </form>
+</div>
+</div>
 
 <% include ./partials/footer %>

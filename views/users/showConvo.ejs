@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="marginTop card text-white text-center mx-auto" style="width: 35rem">
+<%convo.forEach(function(convoResults) { %>
+    <% messages.forEach(function(messageResults){ %>
+        <% if (messageResults.convoId == convoResults.convoId) { %>
+            <p><%=messageResults.author%>: <%=messageResults.content%></p>
+        <% } %>
+    <% }); %>
+<% }); %>
+</div>
+
+
+<div class="marginTop card text-white text-center mx-auto" style="width: 35rem">
+    <div class="card-body">
+<form action="/message/<%=recipi._id%>" method="POST">
+    <div class="form-group">
+        <div class="align-items-center">
+    <p></p>
+    <h3>Send Message to <%=recipi.username%></h3>
+        <div>
+            <textarea class="form-control" rows="4" cols="35" name="content" placeholder = "Type message here"></textarea>
+            <input type="hidden" name="currentuser" value="<%=currentUser.username%>">
+            <input type="hidden" name="currentUserID" value = "<%=currentUser.id%>">
+            <input type="hidden" name="recipientID" value = "<%=recipi._id%>">
+        </div>
+    <button class="btn btn-primary mt-3">Submit</button>
+        </div>
+    </div>
+</form>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
+
+
+

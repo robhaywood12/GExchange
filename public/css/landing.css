@@ -1,0 +1,10 @@
+.jumbotron {
+    background: url("https://i.imgur.com/XK6uQzP.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    min-height: 200px;
+    max-height: 400px;
+}
+
+

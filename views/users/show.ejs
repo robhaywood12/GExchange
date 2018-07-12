@@ -1,23 +1,19 @@
 <% include ../partials/header %>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="container">
+<div class="marginTop card text-white text-center mx-auto mb-3" style="width: 35rem">
             <h1><%= user.username %></h1>
             <p>Country: <%= user.country %></p>
             <p>Native Language: <%= user.nativeLang %></p>
             <p>Practicing Language: <%= user.practLang %></p>
+            <p>Games Playing: <%=user.gamesPlaying%></p>
             <p>Summary: <%= user.desc %></p>
-            <p>Email: <%= user.email %></p>
             <!-- if the current user ID is the same as the mongoDB user ID
             currentuser is derived from passport while user._id is from mongodb-->
             <% if (currentUser && user._id.equals(currentUser._id)) { %>
                 <a href="/users/<%=user._id%>/edit">Edit Profile</a>
             <% } else if (currentUser && !user._id.equals(currentUser._id)) { %>
-                <a href="/message/<%=user._id%>">Send Message</a>
+                <a href="/message/<%=user._id%>/newMessage">Send Message</a>
             <% } %>
-        </div>
-    </div>
 </div>
 
 <% include ../partials/footer %>

@@ -1,6 +1,7 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
+    shortid     = require("shortid"),
     mongoose    = require("mongoose"),
     seedDB      = require("./seed"),
     
@@ -24,6 +25,7 @@ var express     = require("express"),
 mongoose.connect("mongodb://localhost/gamer_exchange");
 app.use(bodyParser.urlencoded({extended: true})); // needed to run body-parser properly. for some reason.
 app.use(methodOverride("_method"));
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 // seed the DATABAS

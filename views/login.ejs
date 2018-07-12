@@ -2,10 +2,23 @@
 <h1> login!</h1>
 
 
+<div class="marginTop card text-white text-center mx-auto" style="width: 20rem">
+    <div class="card-body">
+        
+<div class="form-group">
+    <div class="align-items-center">
+
 <form action = "/login" method="POST">
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit" value="Login!">
+    <input class="form-control" type="text" name="username" placeholder="username">
+    <p class="mt-1">
+        <input class="form-control" type="password" name="password" placeholder="password">
+    </p>
+    <p><input class="btn btn-primary" type="submit" value="Login!"></p>
 </form>
+    </div>
+</div>
+
+</div>
+</div>
 
 <% include ./partials/footer %>

@@ -1,28 +1,41 @@
 <% include ./partials/header %>
-<h1>Describe your gaming partner</h1>
 
 
-<div class="form-group container">
-  <div class="row">
-    <div style="width: 30%; margin: 25px auto;">
-      
+
+<div class="marginTop card text-white text-center mx-auto" style="width: 20rem">
+  <div class="card-body">
+    <h1>Your Gaming Partner</h1>
+
+
       <form action="/gameresults" method="GET">
-        <p><label for="sel1">Speaks:</label>
-          <select id="speakValue" name="speaking">
-            <option>French</option>
-            <option>English</option>
-          </select>
-        </p>
-        <p><label for="sel1">Learning:</label>
-          <select id="learnValue" name="learning">
-            <option>English</option>
-            <option>French</option>
-          </select>
-        </p>
-        <p>
-          <input type="submit">
-        </p>
+        <div class="form-group">
+          <div class="align-items-center">
+          <p><label for="sel1">Speaks:</label>
+            <select class="custom-select" id="speakValue" name="speaking">
+              <option selected>French</option>
+              <option>English</option>
+            </select>
+          </p>
+          </div>
+          
+          <div class="align-items-center">
+          <p><label for="sel1">Learning:</label>
+            <select class="custom-select" id="learnValue" name="learning">
+              <option selected>English</option>
+              <option>French</option>
+            </select>
+          </p>
+          </div>
+          
+          <div class="mx-auto">
+          <p>
+            <input type="submit" class="btn btn-primary">
+          </p>
+          </div>
+        </div>
       </form>
+  </div>
+</div>
       
         <!-- <a href="/gameresults"><button type="button" class="btn btn-primary">Search</button></a> --
     </div>

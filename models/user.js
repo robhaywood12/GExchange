@@ -8,6 +8,7 @@ var User = new mongoose.Schema({
     country: String,
     nativeLang: String,
     practLang: String,
+    gamesPlaying: String,
     desc: String,
     email: String
     

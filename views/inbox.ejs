@@ -1,12 +1,36 @@
-<h1>inbox here</h1>
+<% include ./partials/header %>
+
+<h1>Inbox</h1>
 
 
 <% foundConvos.forEach(function(convoResults){ %>
-    <h4>Message ID: <%=convoResults.convoId%></h4>
-    <% foundMessages.forEach(function(messageResults){ %>
-        <% if (messageResults.convoId == convoResults.convoId) { %>
-            <p><%=messageResults.author%>: <%=messageResults.content%></p>
+    
+    <% if ((convoResults.participantID.person1 == currentUser.id) || (convoResults.participantID.person2 == currentUser.id)) { %>
+    
+        <% if (currentUser.id == convoResults.participantID.person1) { %>
+            <% var URL = convoResults.participantID.person2; %>
+        <% } else { %>
+            <% var URL = convoResults.participantID.person1; %>
         <% } %>
-    <% }) %>
-    <br><br><br>
-<% }) %>
+    
+        <div container>
+        <div class="card text-white mb-3 mx-auto" style="width: 36rem;">
+        <a href="/messages/<%=convoResults.convoId%>/<%=URL%>" class="card-body">
+        <h4><%=convoResults.participants.person1%> & <%=convoResults.participants.person2%></h4>
+        <% var messageCount = 0 %>
+        <% foundMessages.forEach(function(messageResults){ %>
+            <% if ((messageResults.convoId == convoResults.convoId) && (messageCount < 3)) { %>
+                <p><%=messageResults.author%>: <%=messageResults.content.substring(0, 100)%></p>
+                <% messageCount++ %>
+            <% } %>
+        <% }); %>
+        </a>
+        </div>
+        </div>
+    <% } %>
+        
+    
+<% }); %>
+
+
+<% include ./partials/footer %>

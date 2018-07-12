@@ -5,8 +5,11 @@ var convoSchema = new mongoose.Schema({
     participants: {
         person1: String,
         person2: String
+    },
+    participantID: {
+        person1: String,
+        person2: String
     }
-    
 });
 
 module.exports = mongoose.model("Convo", convoSchema);

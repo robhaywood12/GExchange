@@ -8,8 +8,8 @@ var nodemailer = require("nodemailer");
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "emailAddressHere",
-            pass: "gmailPasswordHere"
+            user: "jellypineappleglaze@gmail.com",
+            pass: "&#20nj&hSqI0$kK9AYb7Ga2J"
         
         }
     });
@@ -30,6 +30,7 @@ router.post("/register", function(req, res){
         country: req.body.country,
         nativeLang: req.body.nativeLang,
         practLang: req.body.practLang,
+        gamesPlaying: req.body.gamesPlaying,
         desc: req.body.desc,
         email: req.body.email
     });

@@ -34,28 +34,35 @@ router.get("/gameResults", isLoggedIn, function(req, res) {
     
 });
 
-router.get("/inbox", function(req, res){
+router.get("/inbox", isLoggedIn, function(req, res){
     console.log(req.params);
     // search convoDB for convos where user is in participants list
-    Convo.find({ $or:[{"participants.person1": "baguette99"}, {"participants.person2": "baguette99"}]}, function(err, foundConvos){
-       if(err) {
-           console.log(err);
-       } else {
-           console.log(foundConvos);
-       }
-        // gather all the messages in the DB
-        Message.find({}, function(err, foundMessages){
+    // Convo.find({ $or:[{"participants.person1": "baguette99"}, {"participants.person2": "baguette99"}]}, function(err, foundConvos){
+    //   if(err) {
+    //       console.log(err);
+    //   } else {
+    //       console.log(foundConvos);
+    //   }
+    
+    Convo.find({}, function(err, foundConvos){
         if(err) {
-            console.log(err);
+            console.log(err)
         } else {
-            console.log(foundMessages);
+            Message.find({}, function(err, foundMessages){
+            if(err) {
+                console.log(err);
+            } else {
+                //console.log(foundMessages);
+            }
+                
+            // send all messages and all foundConvos over to inbox
+            res.render("inbox", {foundConvos: foundConvos, foundMessages:foundMessages});   
+            });
         }
-        
-        // send all messages and all foundConvos over to inbox
-        res.render("inbox", {foundConvos: foundConvos, foundMessages:foundMessages});   
-        });
     });
+        
 });
+
 
 
 // displays search page which decides which filter gameresults will sort through
@@ -83,7 +90,7 @@ router.get("/logout", function(req, res){
 
 
 router.put("/users/:id", checkOwnership, function(req, res){
-    // find and update the correct campground
+    // find and update the correct profile
     User.findByIdAndUpdate(req.params.id, req.body.edits, function(err, updatedEdits){
         if(err){
             res.redirect("/");

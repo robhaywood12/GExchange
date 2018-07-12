@@ -10,21 +10,27 @@
     <% } %>
 <% }); %>
 
-<h3><%= numResults %> results found.</h3>
+<% var s = "" %>
+<% if (numResults > 1) { %>
+    <% s = "s"; } %>
+<div class="text-center text-white">
+    <h3><%= numResults %> result<%=s%> found.</h3>
+</div>
 
 
 <% users.forEach(function(results){ %>
     
-
-        <!-- if ((speaking === results.nativeLang) && (learning == results.practLang)) { %> -->
-            <li>
+    <div class="card text-white text-center mx-auto mb-3" style="width: 35rem">
+        <% if ((speaking === results.nativeLang) && (learning === results.practLang)) { %>
+            
             <p><a href="/users/<%= results.id %>"><%= results.username %></a></p>
             <p>Country: <%= results.country %></p>
             <p>Speaking: <%= results.nativeLang %></p>
             <p>Learning: <%= results.practLang %></p> 
-            <p>Summary: <%= results.desc %></p>
-            </li>
-
+            <p>Summary: <%= results.desc.substring(0, 100)%>...</p>
+            
+        <% } %>
+    </div>
     
     <% }); %>  </li>
 

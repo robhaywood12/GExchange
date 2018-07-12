@@ -31,7 +31,7 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 // seed the DATABAS
-seedDB();
+//seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({

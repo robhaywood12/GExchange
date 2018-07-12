@@ -22,8 +22,8 @@ var express     = require("express"),
 // method override
     methodOverride  = require("method-override");
 
-//mongoose.connect("mongodb://localhost/gamer_exchange");
-mongoose.connect("mongodb://joseph:rofl1337@ds135441.mlab.com:35441/gexchange");
+// connecting to mongoDB
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true})); // needed to run body-parser properly. for some reason.
 app.use(methodOverride("_method"));
@@ -38,7 +38,7 @@ app.use(require("express-session")({
     secret: "Pineapple pizza is the best!",
     resave: false,
     saveUninitialized: false
-})); // i don't understand why this part is necessary. need to research more
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());

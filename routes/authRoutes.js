@@ -8,8 +8,8 @@ var nodemailer = require("nodemailer");
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "jellypineappleglaze@gmail.com",
-            pass: "&#20nj&hSqI0$kK9AYb7Ga2J"
+            user: "gamerexchange.org@gmail.com",
+            pass: "9E5Rdz*VHT0s"
         
         }
     });
@@ -42,10 +42,10 @@ router.post("/register", function(req, res){
         }
         if (!newUser.isAuthenticated) {
             const mailOptions = {
-                from: "jellypineappleglaze@gmail.com",
+                from: "Gamer Exchange",
                 to: user.email,
                 subject: "Please confirm your e-mail address",
-                text: "https://gamer-exchange-joseo.c9users.io/activation/"+user.authToken
+                text: "https://gamerexchange.org/activation/"+user.authToken
             };
             transporter.sendMail(mailOptions, function(err, info){
                 if(err) {

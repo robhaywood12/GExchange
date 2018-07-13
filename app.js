@@ -4,7 +4,7 @@ var express     = require("express"),
     shortid     = require("shortid"),
     mongoose    = require("mongoose"),
     seedDB      = require("./seed"),
-    
+
 // auth variables
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),

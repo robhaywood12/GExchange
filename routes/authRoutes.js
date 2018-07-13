@@ -45,7 +45,7 @@ router.post("/register", function(req, res){
                 from: "Gamer Exchange",
                 to: user.email,
                 subject: "Please confirm your e-mail address",
-                text: "https://gamerexchange.org/activation/"+user.authToken
+                text: "Hello! Please confirm your e-mail here: https://www.gamerexchange.org/activation/"+user.authToken
             };
             transporter.sendMail(mailOptions, function(err, info){
                 if(err) {

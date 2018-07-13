@@ -4,6 +4,7 @@ var express     = require("express"),
     shortid     = require("shortid"),
     mongoose    = require("mongoose"),
     seedDB      = require("./seed"),
+    forceSsl    = require("force-ssl-heroku"),
     
 // auth variables
     passport        = require("passport"),
@@ -28,6 +29,7 @@ mongoose.connect(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true})); // needed to run body-parser properly. for some reason.
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public"));
+app.use(forceSsl);
 app.set("view engine", "ejs");
 
 // seed the DATABAS

@@ -9,7 +9,7 @@ var nodemailer = require("nodemailer");
         service: "gmail",
         auth: {
             user: "gamerexchange.org@gmail.com",
-            pass: "9E5Rdz*VHT0s"
+            pass: "passwordhere"
         
         }
     });

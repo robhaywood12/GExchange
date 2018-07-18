@@ -15,7 +15,7 @@ router.get("/pleaseConfirm", function(req, res) {
 
 
 // finds users in the database and renders gameresults which shows a list of the users.
-router.get("/gameResults", isLoggedIn, function(req, res) {
+router.get("/gameResults", function(req, res) {
     User.find({}, function(err, persons){
         if(err){
             console.log(err);
